@@ -16,14 +16,14 @@ def ShowResult(request):
         form = InputForm(request.POST, request.FILES)
         if form.is_valid():
             data = form.save()
-            print(data.scale)
-            print(data.area)
             print(data.Image)
+            path = str(data.Image).split('.')[0]
+            print(path)
             # AI 돌려서 result 얻기
-            result = tile_predict("unet_min", [256,256,3], "E:\\JXS\\Seoul1ro\\AI\\unet_mini300_06_07_20.hdf5", data.Image, "tiff", "output/", 3, 8)
+            result = tile_predict("unet_min", [256,256,3], "E:\\JXS\\Seoul1ro\\AI\\unet_mini300_06_07_20.hdf5", path, "tiff", "output/", 3, 8)
 
             # result = Search.objects.last()
-            print(result)
+            print(result) # None
             return render(request, 'main/index.html', {
                 'form': form,
                 'result': result,

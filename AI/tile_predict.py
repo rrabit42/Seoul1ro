@@ -1,10 +1,12 @@
-# import gdal
+import gdal
 import numpy as np
 from tensorflow.keras.models import load_model
 import os
 import argparse
 import glob
 
+# from AI.gdal.swig.python.osgeo.gdal import Open, GetDriverByName
+# from AI.gdal.swig.python.osgeo.gdalconst import GDT_Int16
 from AI.models import segnet_model
 from AI.models import lp_utils as lu
 
@@ -82,8 +84,7 @@ def tile_predict(model, input_shape, weights, image_folder, image_format, output
     _, p_rows, p_cols, p_chan = model.layers[0].input_shape[0] # Patch shape
     # print("\n\n\n" + str(args.input_shape) + "\n\n\n")
     
-    # image_paths = sorted(glob.glob(image_folder + "*." + image_format))
-    image_paths = image_folder
+    image_paths = sorted(glob.glob(image_folder + "*." + image_format))
     outdriver = gdal.GetDriverByName("GTiff")
     rs = lu.rescaling_value(rs)
 
