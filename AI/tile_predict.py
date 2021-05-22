@@ -1,8 +1,10 @@
-import gdal
+# import gdal
 import numpy as np
 from tensorflow.keras.models import load_model
 import os
 import argparse
+from skimage import io
+import matplotlib.pyplot as plt
 import glob
 
 # from AI.gdal.swig.python.osgeo.gdal import Open, GetDriverByName
@@ -68,6 +70,7 @@ def image_from_patches(result, idx, patchsize, t_rows, t_cols):
     # print(outimage.shape)
     return outimage
 
+
 def tile_predict(model, input_shape, weights, image_folder, image_format, output_folder, num_classes, rs):
     # if args.model == "unet":
     #     model = load_model(args.weights)
@@ -84,10 +87,10 @@ def tile_predict(model, input_shape, weights, image_folder, image_format, output
     _, p_rows, p_cols, p_chan = model.layers[0].input_shape[0] # Patch shape
     # print("\n\n\n" + str(args.input_shape) + "\n\n\n")
     
-    image_paths = sorted(glob.glob(image_folder + "*." + image_format))
+    # image_paths = sorted(glob.glob(image_folder + "*." + image_format))
+    image_paths = [image_folder]
     outdriver = gdal.GetDriverByName("GTiff")
     rs = lu.rescaling_value(rs)
-
     for i in range(len(image_paths)):
         image = gdal.Open(image_paths[i])
         image_array = np.array(image.ReadAsArray())
@@ -118,7 +121,10 @@ def tile_predict(model, input_shape, weights, image_folder, image_format, output
             trans = image.GetGeoTransform()
             outdata.SetProjection(proj)
             outdata.SetGeoTransform(trans)
-        return outdata
+            img = io.imread(outfile)
+            plt.savefig(outfile, transparent=True, dpi=300, bbox_inches="tight", pad_inches=0.0)
+            return outfile
+        return outfile
 
 
 if __name__ == '__main__':

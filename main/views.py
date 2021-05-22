@@ -4,6 +4,7 @@ from django.shortcuts import render
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from PIL import Image
 
 from AI.tile_predict import tile_predict
 from main.forms import InputForm
@@ -16,14 +17,22 @@ def ShowResult(request):
         form = InputForm(request.POST, request.FILES)
         if form.is_valid():
             data = form.save()
-            print(data.Image)
-            path = str(data.Image).split('.')[0]
-            print(path)
-            # AI 돌려서 result 얻기
-            result = tile_predict("unet_min", [256,256,3], "E:\\JXS\\Seoul1ro\\AI\\unet_mini300_06_07_20.hdf5", path, "tiff", "output/", 3, 8)
+            image = Image.open(data.Image)
+            width, height = image.size
 
-            # result = Search.objects.last()
-            print(result) # None
+            origin = str(data.Image)
+            path = str(data.Image).split('.')[0]
+            # AI 돌려서 result 얻기
+            # result = tile_predict("unet_min", [width,height,3], "E:\\JXS\\Seoul1ro\\AI\\unet_mini300_06_07_20.hdf5", "media/"+origin, "tiff", "media/output/", 3, 8)
+            # print(type(result))
+            # img = Image.open(result)
+            # print(img)
+            # name = result.split('.')[0]
+            # print(name)
+            # img = img.convert('RGB')
+            # img = img.save(name+'.jpg', 'JPEG')
+            result = Search.objects.last()
+            # result = data.Image
             return render(request, 'main/index.html', {
                 'form': form,
                 'result': result,
