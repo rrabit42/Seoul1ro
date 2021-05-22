@@ -15,14 +15,9 @@
         <button type="submit">제출</button>
     </form>
 
-    <img src="/media/input/23879050_15_UDl2AFU.tiff" alt="불러오지 못했습니다"/>
-
     {% if result %}
         <h3> 분석 결과</h3>
-        {{ result }}
-        <br/>
-        {{ result.Image.url }}
-        <img src="{{ result.Image.url }}" alt="불러오지 못했습니다"/>
+        <img src="{{ result }}" alt="불러오지 못했습니다"/>
     {% endif %}
 </body>
 </html>

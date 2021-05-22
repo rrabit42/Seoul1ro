@@ -23,19 +23,19 @@ def ShowResult(request):
             origin = str(data.Image)
             path = str(data.Image).split('.')[0]
             # AI 돌려서 result 얻기
-            # result = tile_predict("unet_min", [width,height,3], "E:\\JXS\\Seoul1ro\\AI\\unet_mini300_06_07_20.hdf5", "media/"+origin, "tiff", "media/output/", 3, 8)
-            # print(type(result))
-            # img = Image.open(result)
-            # print(img)
-            # name = result.split('.')[0]
-            # print(name)
-            # img = img.convert('RGB')
-            # img = img.save(name+'.jpg', 'JPEG')
-            result = Search.objects.last()
+            result = tile_predict("unet_min", [width,height,3], "E:\\JXS\\Seoul1ro\\AI\\unet_mini300_06_07_20.hdf5", "media/"+origin, "tiff", "media/output/", 3, 8)
+            print(type(result))
+            img = Image.open(result)
+            print(img)
+            name = result.split('.')[0]
+            print(name)
+            img = img.convert('RGB')
+            img.save(name+'.jpg', 'JPEG')
+            # result = Search.objects.last()
             # result = data.Image
             return render(request, 'main/index.html', {
                 'form': form,
-                'result': result,
+                'result': name+'.jpg',
             })
         else:
             # 올바른 파일 올려달라고 메세지 넣기
