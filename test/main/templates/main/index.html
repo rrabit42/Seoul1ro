@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/css/index.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+    </style>
+    <title>Seoul1ro team website</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="content">
+        <h1 class="title">
+            <img class = "bg" src = "static/img/top_bg.png"/>
+           <img class = "logo" src = "static/img/Junctionxseoul-white-ver1.svg"/>
+           <br>
+          <span class="title__">Fire</span
+          ><span span class="title__">where</span>
+        </h1>
+        <div class="content__form">
+          <div class="img">
+            <h5 class="img__text">Fill the form out</h5>
+            <div class="img__box">
+              <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %} {{form.as_p }}
+            </div>
+                <button type="submit" class="button">Submit</button>
+              </form>
+              {% if result.Image %}
+              <h3>분석 결과</h3>
+              <img src="{{ result.Image.url }}" alt="불러오지 못했습니다" />
+              {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

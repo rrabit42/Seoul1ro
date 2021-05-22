@@ -1,0 +1,153 @@
+body {
+  background: #fafafa;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+.bg {
+  z-index: 1;
+  position: absolute;
+  top: -50px;
+  left: -658px;
+  width: 118rem;
+}
+
+.content {
+  font-family: system-ui, serif;
+  font-size: 2rem;
+  width: 118rem;
+  height: 65rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #232323;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.logo {
+  z-index: 8;
+  width: 400px;
+}
+
+.title {
+  position: absolute;
+  top: 0rem;
+  text-shadow: #533d4a 1px 1px, #533d4a 2px 2px, #533d4a 3px 3px,
+    #533d4a 4px 4px, #533d4a 5px 5px, #533d4a 6px 6px;
+  font-size: 85px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.img {
+  margin-bottom: -19rem;
+  width: 50rem;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img__text {
+  color: white;
+  margin-bottom: 5px;
+  margin-top: 20px;
+  font-size: 35px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+
+.content__form {
+  position: relative;
+}
+
+p {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: white;
+  font-size: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+
+input {
+  position: relative;
+  font-size: 30px;
+  padding: 3px;
+  display: inline-block;
+  border-radius: 9999em;
+  border: 1px solid white;
+  margin-top: 10px;
+  background: none;
+  color: white;
+}
+
+p:nth-child(4) input {
+  font-size: 25px;
+  border: none;
+  border-radius: 0;
+  position: absolute;
+  top: 420px;
+  left: 230px;
+}
+
+.button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 30px;
+  width: 140px;
+  padding: 8px 0px;
+  font-size: 25px;
+  margin-top: 15px;
+  font-family: "Montserrat", sans-serif;
+  position: absolute;
+  top: 500px;
+  font-weight: 400;
+}
+
+.button:focus {
+  outline: 0;
+}
+
+.button:hover {
+  background: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+  background-color: #dfdfdf;
+}
+
+.button:active {
+  position: relative;
+  top: 1px;
+}
+
+.title__:nth-child(4) {
+  z-index: 3;
+  color: white;
+  font-size: 120px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+.title__:nth-child(5) {
+  z-index: 3;
+  color: white;
+  font-size: 105px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
