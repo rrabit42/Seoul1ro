@@ -39,3 +39,7 @@ Calculate the ratio of the area of the road to the building to determine if the 
 4. ```python manage.py migrate```  
 5. ```python manage.py runserver```  
 ```python manage.py collectstatic``` : static 파일 추가했을 때  
+
+## Conda 동시 실행  
+1. ```conda env create -f environment.yml``` : yml 경로는 알아서 수정  
+2. ```conda activate label-pixels```
