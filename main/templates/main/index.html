@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="recommed.css" />
+    <link rel="stylesheet" href="../static/css/index.css" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
     </style>
@@ -14,37 +14,39 @@
     <div class="container">
       <div class="content">
         <h1 class="title">
-          <img class="bg" src="static/img/cut_bg.png" />
+          <img class="bg" src="../static/img/top_bg.png" />
+          <img class="logo" src="../static/img/Junctionxseoul-white-ver1.svg" />
           <br />
-          <span class="title__">Recommend</span>
-          <img class="pin" src="static/img/pin.png" />
+          <span class="title__">Fire</span
+          ><span span="" class="title__">where</span>
         </h1>
-        <div class="view__container">
-          <div class="view__road">
-            <div class="view__road__text">Road Only</div>
-            <div>
-              <img class="view__road__img" src="static/img/road_only.jpeg" />
+        <div class="content__form">
+          <div class="img">
+            <h5 class="img__text">Fill the form out</h5>
+            <div class="img__box">
+              <form action="" method="post" enctype="multipart/form-data">
+                <input type="hidden" />
+                <p>
+                  <label for="id_scale">Scale</label>
+                  <input type="number" name="scale" required="" id="id_scale" />
+                </p>
+                <p>
+                  <label for="id_area">Area</label>
+                  <input type="number" name="area" required="" id="id_area" />
+                </p>
+                <p>
+                  <label for="id_Image">Image</label>
+                  <input
+                    type="file"
+                    name="Image"
+                    accept="image/*"
+                    required=""
+                    id="id_Image"
+                  />
+                </p>
+              </form>
             </div>
-          </div>
-          <div class="view__all">
-            <div class="view__all__text">
-              You have selected<span class="view_all_figure">Scale</span
-              ><span class="view_all_figure">Area</span>
-              <div class="view_all_box">
-                <img class="view__road__img" src="static/img/image (1).png" />
-              </div>
-              <span class="view__all__idx">Dimension:0000</span>
-              <span class="view__all__idx">Buildings:0000</span>
-            </div>
-          </div>
-          <div class="view__building">
-            <div class="view__building__text">Building Only</div>
-            <div>
-              <img
-                class="view__building__img"
-                src="static/img/road_only.jpeg"
-              />
-            </div>
+            <button class="button">Submit</button>
           </div>
         </div>
       </div>
