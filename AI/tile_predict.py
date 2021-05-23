@@ -115,13 +115,20 @@ def tile_predict(model, input_shape, weights, image_folder, image_format, output
         outfile = output_folder + filename
         outfile = outfile + ".tif"  # Line for jpg, png, and tiff formats
         outdata = outdriver.Create(str(outfile), t_rows, t_cols, 1, gdal.GDT_Int16)
+        print("outdata: ")
+        print(outdata)
         outdata.GetRasterBand(1).WriteArray(result_array)
         if image.GetProjection() and image.GetGeoTransform():
             proj = image.GetProjection()
             trans = image.GetGeoTransform()
             outdata.SetProjection(proj)
             outdata.SetGeoTransform(trans)
+            print(outfile)
             img = io.imread(outfile)
+            np.reshape(img, (t_rows, t_cols, 3))
+            print(img.shape)
+            plt.imshow(img, cmap='gray')
+            plt.axis('off')
             plt.savefig(outfile, transparent=True, dpi=300, bbox_inches="tight", pad_inches=0.0)
             return outfile
         return outfile
