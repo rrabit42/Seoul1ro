@@ -14,8 +14,8 @@ body {
 .bg {
   z-index: 1;
   position: absolute;
-  top: -50px;
-  left: -658px;
+  top: -48px;
+  left: -945px;
   width: 118rem;
 }
 
@@ -35,14 +35,15 @@ body {
 
 .logo {
   z-index: 8;
-  width: 400px;
+  width: 350px;
+  position: absolute;
+  top: 90px;
+  left: -176px;
 }
 
 .title {
   position: absolute;
   top: 0rem;
-  text-shadow: #533d4a 1px 1px, #533d4a 2px 2px, #533d4a 3px 3px,
-    #533d4a 4px 4px, #533d4a 5px 5px, #533d4a 6px 6px;
   font-size: 85px;
   font-family: "Montserrat", sans-serif;
 }
@@ -59,11 +60,19 @@ body {
 
 .img__text {
   color: white;
-  margin-bottom: 5px;
-  margin-top: 20px;
-  font-size: 35px;
+  margin-bottom: -5px;
+  margin-top: 50px;
+  font-size: 26px;
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
+}
+
+.img__box {
+  display: flex;
+  flex-direction: start;
+  justify-content: start;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .content__form {
@@ -75,32 +84,57 @@ p {
   flex-direction: column;
 }
 
-label {
-  color: white;
-  font-size: 30px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 300;
-}
-
 input {
   position: relative;
   font-size: 30px;
   padding: 3px;
   display: inline-block;
-  border-radius: 9999em;
+  border-radius: 18px;
   border: 1px solid white;
-  margin-top: 10px;
+  margin-top: 5px;
   background: none;
   color: white;
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+
+p:nth-child(2) label {
+  color: white;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  justify-content: start;
+  position: absolute;
+  top: 160px;
+}
+
+p:nth-child(3) label {
+  color: white;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  justify-content: start;
+  position: absolute;
+  top: 280px;
+}
+
+p:nth-child(4) label {
+  color: white;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  justify-content: start;
+  position: absolute;
+  top: 410px;
 }
 
 p:nth-child(4) input {
-  font-size: 25px;
+  font-size: 18px;
   border: none;
   border-radius: 0;
   position: absolute;
-  top: 420px;
-  left: 230px;
+  top: 376px;
+  left: 340px;
 }
 
 .button {
@@ -111,14 +145,14 @@ p:nth-child(4) input {
   background-color: transparent;
   cursor: pointer;
   background-color: white;
-  border-radius: 30px;
+  border-radius: 14px;
   width: 140px;
   padding: 8px 0px;
-  font-size: 25px;
+  font-size: 20px;
   margin-top: 15px;
   font-family: "Montserrat", sans-serif;
   position: absolute;
-  top: 500px;
+  top: 480px;
   font-weight: 400;
 }
 
@@ -139,15 +173,21 @@ p:nth-child(4) input {
 .title__:nth-child(4) {
   z-index: 3;
   color: white;
-  font-size: 120px;
+  font-size: 90px;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
+  position: absolute;
+  top: 180px;
+  left: -230px;
 }
 
 .title__:nth-child(5) {
   z-index: 3;
   color: white;
-  font-size: 105px;
+  font-size: 90px;
   font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+  font-weight: 400;
+  position: absolute;
+  top: 180px;
+  left: -52px;
 }
