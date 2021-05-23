@@ -1,0 +1,135 @@
+body {
+  background: #fafafa;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+.bg {
+  z-index: 1;
+  position: absolute;
+  top: -30px;
+  left: -945px;
+  width: 118rem;
+}
+
+.content {
+  font-family: system-ui, serif;
+  font-size: 2rem;
+  width: 118rem;
+  height: 65rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #232323;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.logo {
+  z-index: 8;
+  width: 350px;
+  position: absolute;
+  top: 90px;
+  left: -176px;
+}
+
+.title {
+  position: absolute;
+  top: 0rem;
+  font-size: 85px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.img {
+  margin-bottom: -19rem;
+  width: 50rem;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title__ {
+  z-index: 3;
+  color: white;
+  font-size: 90px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  position: absolute;
+  top: 40px;
+  left: -132px;
+}
+
+.pin {
+  z-index: 3;
+  width: 60px;
+  position: absolute;
+  top: 120px;
+  left: -32px;
+}
+
+.view__container {
+  margin-top: 320px;
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28px;
+}
+
+.view__road {
+  width: 400px;
+  height: 500px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.view__all {
+  width: 700px;
+  height: 600px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.view_all_box {
+  width: 700px;
+  height: 500px;
+  border: 1px solid white;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.view__building {
+  font-family: "Montserrat", sans-serif;
+  width: 400px;
+  height: 500px;
+}
+
+.view_all_figure {
+  margin-left: 90px;
+  border: 1px solid white;
+  padding: 5px 30px;
+  padding-bottom: 8px;
+  border-radius: 25px;
+}
+
+.view__all__idx {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.781);
+}
+
+.view__building__img,
+.view__road__img {
+  width: 400px;
+}
