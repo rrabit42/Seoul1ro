@@ -1,6 +1,6 @@
 # Seoul1ro
 ## Junction X Seoul 2021  
-### SI Anaylisis track  
+### SI Analysis track  
 
 ## Idea  
 ### 🚒Fire station Loacation Analysis🔥  
